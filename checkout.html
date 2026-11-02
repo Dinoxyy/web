@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Настройки профиля - WaveTune</title>
+</head>
+<body>
+    <header>
+        <h1>WaveTune</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="catalog.html">Каталог</a></li>
+                <li><a href="detail.html">Исполнитель</a></li>
+                <li><a href="collection.html">Мой плейлист</a></li>
+                <li><a href="checkout.html">Настройки</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Настройка аудио-предпочтений</h2>
+        <form action="/save-preferences" method="POST">
+            
+            <!-- 1. Text -->
+            <label for="username">Ваше имя / Никнейм:</label><br>
+            <input type="text" id="username" name="username" required minlength="3" maxlength="30"><br><br>
+
+            <!-- 2. Email -->
+            <label for="email">Email для получения рекомендаций:</label><br>
+            <input type="email" id="email" name="email" required><br><br>
+
+            <!-- 3. Number -->
+            <label for="age">Ваш возраст:</label><br>
+            <input type="number" id="age" name="age" min="12" max="99" required><br><br>
+
+            <!-- 4. Checkbox (Несколько чекбоксов по варианту 14) -->
+            <fieldset>
+                <legend>Выберите любимые жанры:</legend>
+                <input type="checkbox" id="genre1" name="genres" value="electronic">
+                <label for="genre1">Электроника</label><br>
+                <input type="checkbox" id="genre2" name="genres" value="rock">
+                <label for="genre2">Рок</label><br>
+                <input type="checkbox" id="genre3" name="genres" value="jazz">
+                <label for="genre3">Джаз</label>
+            </fieldset><br>
+
+            <!-- 5. Radio (Радиокнопки по варианту 14) -->
+            <fieldset>
+                <legend>Предпочитаемое качество аудио:</legend>
+                <input type="radio" id="q1" name="quality" value="standard" required>
+                <label for="q1">Стандарт (128 kbps)</label><br>
+                <input type="radio" id="q2" name="quality" value="high">
+                <label for="q2">Высокое (320 kbps)</label><br>
+                <input type="radio" id="q3" name="quality" value="lossless">
+                <label for="q3">Lossless (FLAC)</label>
+            </fieldset><br>
+
+            <!-- 6. Select -->
+            <label for="era">Любимая музыкальная эпоха:</label><br>
+            <select id="era" name="era" required>
+                <option value="">-- Выберите эпоху --</option>
+                <option value="80s">80-е годы</option>
+                <option value="90s">90-е годы</option>
+                <option value="00s">00-е годы</option>
+                <option value="modern">Современность</option>
+            </select><br><br>
+
+            <!-- 7. Textarea -->
+            <label for="bio">Опишите ваш музыкальный вкус:</label><br>
+            <textarea id="bio" name="bio" rows="4" cols="50" maxlength="500" required placeholder="Например: Люблю слушать синтвейп ночью..."></textarea><br><br>
+
+            <!-- 8. Date -->
+            <label for="startdate">Дата оформления подписки:</label><br>
+            <input type="date" id="startdate" name="startdate" required><br><br>
+
+            <button type="submit">Сохранить настройки</button>
+        </form>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 WaveTune. Все права защищены.</p>
+    </footer>
+</body>
+</html>
